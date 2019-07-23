@@ -1,0 +1,13 @@
+# Input "name/favorite food/hometown"
+Kiara Atkins/either salmon or curry/Southfield, MI
+Kevin Busch/pizza/Ann Arbor, MI
+Kevon Butler/tacos/Detroit, MI
+Kris Chervin/pasta/Detroit, MI
+Christopher Ciric/pizza/Northville, MI
+Benjamin Feinstein/pizza/Farmington Hills, MI
+Atiba Franklin/chicken & brocolli pasta/Detroit, MI
+Brian Hudson/ramen/Northville, MI
+Natasha Langston/tacos/Detroit, MI
+Qutada Samaha/pizza/Ann Arbor, MI
+Orestis Sinis/tacos/Cincinnati, OH
+Sean Yang/sushi/Gaylord, MI
