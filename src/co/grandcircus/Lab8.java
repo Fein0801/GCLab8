@@ -13,7 +13,7 @@ public class Lab8 {
 
     private static ArrayList<Student> students = new ArrayList<Student>();
     private static final String FILE_NAME = "src\\co\\grandcircus\\studentData.txt";
-    private static final String[] DATA_TYPES = { "favorite food", "hometown", "name" };
+    private static final String[] DATA_TYPES = { "favorite food", "hometown", "name", "nothing" };
 
     public static void main(String[] args) {
 	Scanner userInput = new Scanner(System.in);
@@ -25,6 +25,7 @@ public class Lab8 {
 	    e.printStackTrace(System.out);
 	}
 
+	Student.sortByLastName(students);
 	getStudentInfo(userInput);
 
 	System.out.println("Goodbye.");
@@ -32,6 +33,7 @@ public class Lab8 {
 	userInput.close();
     }
 
+    // Splits any line in text file
     private static void createStudent(String str) {
 	if (str.contains("/") && !str.contains("#")) {
 	    String[] parts = str.split("/");
@@ -87,10 +89,16 @@ public class Lab8 {
 		    System.out.printf("I have already told you %s's name. Have you been paying attention?\n",
 			    firstName);
 		    break;
+		case "nothing":
+		    break;
 		}
 
-		System.out.printf("Would you like more info about %s? (yes/no)\n> ", firstName);
-		wantsMoreInfo = sc.nextLine().equalsIgnoreCase("yes");
+		if (!dataType.equalsIgnoreCase("nothing")) {
+		    System.out.printf("Would you like more info about %s? (yes/no)\n> ", firstName);
+		    wantsMoreInfo = sc.nextLine().equalsIgnoreCase("yes");
+		} else {
+		    wantsMoreInfo = false;
+		}
 	    }
 	}
     }

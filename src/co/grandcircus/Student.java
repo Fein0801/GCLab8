@@ -1,5 +1,7 @@
 package co.grandcircus;
 
+import java.util.ArrayList;
+
 /**
  * @author Ben Feinstein
  * 
@@ -89,6 +91,32 @@ public class Student {
 	String[] fullName = this.name.split(" ");
 	this.firstName = fullName[0];
 	this.lastName = fullName[1];
+    }
+
+    public static void sortByLastName(ArrayList<Student> studentList) {
+	Student[] arr = studentList.toArray(new Student[studentList.size()]);
+	sortByLastName(arr);
+	studentList.clear();
+	for (Student s : arr) {
+	    studentList.add(s);
+	}
+    }
+
+    public static void sortByLastName(Student[] arr) {
+	// does a selection sort
+	for (int i = 0; i < arr.length - 1; i++) {
+	    int indexSmallest = i;
+
+	    for (int j = i + 1; j < arr.length; j++) {
+		if (arr[j].getLastName().compareToIgnoreCase(arr[indexSmallest].getLastName()) < 0) {
+		    indexSmallest = j;
+		}
+	    }
+
+	    Student temp = arr[i];
+	    arr[i] = arr[indexSmallest];
+	    arr[indexSmallest] = temp;
+	}
     }
 
 }
