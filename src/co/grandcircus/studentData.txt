@@ -14,4 +14,4 @@ Qutada Samaha/pizza/Ann Arbor, MI
 Maurice Tedder/donuts/Detroit, MI
 Sean Yang/sushi/Gaylord, MI
 
-# you can add more lines if you want to
+# you can add more lines if you want to, but my code will not validate names at the moment.
