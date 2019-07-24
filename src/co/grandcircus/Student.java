@@ -84,7 +84,7 @@ public class Student {
 	return s;
     }
 
-    // splits name into first and last. Theoretically, this could be error prone.
+    // Splits name into first and last. Theoretically, this could be error prone.
     private void splitName() {
 	String[] fullName = this.name.split(" ");
 	this.firstName = fullName[0];
