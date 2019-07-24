@@ -106,7 +106,7 @@ public class Lab8 {
 	while (!dataTypes.contains(input)) {
 	    System.out.printf("What would you like to know about %s? ", studentName);
 	    System.out.println();
-	    System.out.print("(");
+	    System.out.print("(Please enter ");
 	    for (int index = 0; index < dataTypes.size(); index++) {
 		System.out.print("\"" + dataTypes.get(index) + "\"");
 		if (index < dataTypes.size() - 1) {
