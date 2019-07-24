@@ -90,6 +90,7 @@ public class Lab8 {
 		}
 
 		System.out.printf("Would you like more info about %s? (yes/no)\n> ", firstName);
+		// forget using if/else, just keep
 		wantsMoreInfo = sc.nextLine().equalsIgnoreCase("yes");
 	    }
 	}
