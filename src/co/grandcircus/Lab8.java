@@ -5,6 +5,10 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * @author Ben Feinstein
+ */
+
 public class Lab8 {
 
     private static ArrayList<Student> students = new ArrayList<Student>();
@@ -15,7 +19,7 @@ public class Lab8 {
 	Scanner userInput = new Scanner(System.in);
 	try {
 	    // Creates student objects. File on GitHub
-	    createStudentsFromFile(FILE_NAME);
+	    createStudentsFromFile();
 	} catch (FileNotFoundException e) {
 	    System.out.println("Ben needs to learn how to read files!");
 	    e.printStackTrace(System.out);
@@ -41,8 +45,9 @@ public class Lab8 {
 	}
     }
 
-    private static void createStudentsFromFile(String fileName) throws FileNotFoundException {
-	Scanner fileInput = new Scanner(new FileReader(fileName));
+    // File readers are finnicky and hard to understand. this takes in the constant
+    private static void createStudentsFromFile() throws FileNotFoundException {
+	Scanner fileInput = new Scanner(new FileReader(FILE_NAME));
 	while (fileInput.hasNextLine()) {
 	    String input = fileInput.nextLine();
 	    createStudent(input);
@@ -100,6 +105,14 @@ public class Lab8 {
 	while (!dataTypes.contains(input)) {
 	    System.out.printf("What would you like to know about %s? ", studentName);
 	    System.out.println();
+	    System.out.print("(");
+	    for (int index = 0; index < dataTypes.size(); index++) {
+		System.out.print("\"" + dataTypes.get(index) + "\"");
+		if (index < dataTypes.size() - 1) {
+		    System.out.print(" or ");
+		}
+	    }
+	    System.out.println(")");
 	    input = sc.nextLine().toLowerCase();
 
 	    if (!dataTypes.contains(input) && !input.equals("")) {
